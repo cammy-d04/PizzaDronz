@@ -1,8 +1,16 @@
+
+image: maven:3.8.4-openjdk-17
+
 stages:
+  - build
   - test
+
+build:
+  stage: build
+  script:
+    - mvn clean compile
 
 test:
   stage: test
-  image: maven:3.8.4-jdk-11
   script:
-    - mvn clean test
+    - mvn test
